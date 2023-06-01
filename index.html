@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title> Interactive card details form</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card-container">
+      <div class="container">
+        <div class="right">
+          <div class="image">
+            <div class="card-img">
+              <img src="./images/bg-card-front.png" alt="" class="card-pin" />
+              <div class="para">
+                <img src="./images/card-logo.svg" alt="" class="logo" />
+                <p class="pin-number"> <span id="card-pin-no"> 0000 0000 0000 0000</span></p>
+                <p class="names"><span id="card-name"> Felicia lerire</span></p>
+                <p class="dates"><span id="card-exp-date"> 09/00</span></p>
+              </div>
+            </div>
+            <img src="./images/bg-card-back.png" alt="" class="back-side" />
+          </div>
+        </div>
+        <div class="left" id="left">
+          <div class="form">
+            <div class="form-name" id="form-name">
+              <label for="Carrdholder name" aria-label="cardholder name"
+                >Carrdholder name</label
+              >
+              <input
+                type="text"
+                class="name"
+                placeholder="e.g. Jane Appleseed"
+              />
+            </div>
+
+            <div class="card-num">
+              <label for="Card number" aria-label="card number"
+                >Card Number</label
+              >
+              <input
+                type="number"
+                class="number"
+                id="number"
+                placeholder=" e.g. 1234 5678 9123 0000"
+              />
+              <p class="error">Wrong format, numbers only</p>
+            </div>
+
+            <div class="exp-date">
+              <div class="exp-input">
+                <label for="month" aria-label="expiration month">Exp Date(MM/YY)</label>
+                <div class="input-group">
+                  <input type="number" id="month" class="month " placeholder="MM" required />
+                  <input type="number" id="year" class="year" placeholder="YY" required />
+                </div>
+                <p class="error">Can't leave blank</p>
+              </div>
+              <div class="cvc-input">
+                <div class="input-group">
+                  <label for="cvc" aria-label="cvc">CVC</label>
+                  <input type="number" id="cvc" class="cvc" placeholder="e.g. 123" required />
+                </div>
+                <p class="error">Can't leave blank</p>
+              </div>
+            </div>
+            
+            
+            <button class="btn confirm" id="confirm">Confirm</button>
+          </div>
+        </div>
+        <div class="thank-you-container" id="thank-you-container">
+          <div class="thankyou">
+            <h1>Thank you!</h1>
+            <p>We've added your card details Continue</p>
+            <button class="btn continue show" id="continue">Continue</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

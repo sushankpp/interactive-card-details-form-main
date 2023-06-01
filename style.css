@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  --Linear-gradient: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --font: 'Space Grotesk', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.card-container {
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.right {
+  background-image: url('./images/bg-main-desktop.png'),
+    url('./images/bg-card-front.png'), url('./images/bg-card-back.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.card-img {
+  position: absolute;
+  top: 20%;
+  right: -20%;
+  width: auto;
+  height: 215px;
+  box-shadow: 10px -5px 19px 9px rgba(0, 0, 0, 0.2);
+}
+
+.para {
+  position: absolute;
+  top: 0;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+
+.pin-number {
+  position: relative;
+  bottom: -5rem;
+  width: 100%;
+  letter-spacing: 2px;
+  font-size: 24px;
+  color: var(--White);
+}
+
+.names,
+.dates {
+  position: absolute;
+  bottom: -7rem;
+  letter-spacing: 2px;
+  color: var(--White);
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.dates {
+  right: -3rem;
+}
+
+.back-side {
+  position: relative;
+  left: 45%;
+  margin-top: 30rem;
+  box-shadow: 0px -2px 19px 6px rgba(0, 0, 0, 0.3);
+}
+
+.left,
+.thank-you-container {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.thank-you-container {
+  display: none;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.form-name,
+.card-num {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-name input,
+.card-num input {
+  width: 400px;
+}
+
+input {
+  color: #333;
+  border-color: var(--Light-grayish-violet);
+  border-radius: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.form-name input.active {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, var(--Linear-gradient)) 1;
+  border-image-slice: 1;
+  border-radius: 10px;
+}
+
+.card-num.error input {
+  border-color: var(--Red);
+}
+
+.card-num p {
+  display: none;
+  font-size: 12px;
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--Red);
+  padding: 0.5rem;
+  padding-left: 0;
+}
+
+.card-num.error p {
+  display: block;
+}
+
+input {
+  height: 50px;
+  color: var(--Dark-grayish-violet);
+  padding: 1rem;
+}
+
+.exp-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 1.5rem;
+}
+
+.exp-date label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 0.5rem; /* Add some right margin for spacing */
+}
+
+.exp-date input {
+  border-color: var(--Light-grayish-violet);
+  width: 95px;
+  margin-right: 0.5rem; /* Add some right margin for spacing */
+}
+
+.exp-date.mistake input {
+  border-color: var(--Red);
+}
+
+.exp-date .error {
+  display: none;
+  font-size: 12px;
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--Red);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.exp-date.mistake .error {
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-group label {
+  margin-right: 0.5rem;
+}
+
+.input-group .divider {
+  margin: 0 0.5rem;
+}
+
+.exp-input,
+.cvc-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-input input,
+.cvc-input input {
+  margin-bottom: 0.5rem;
+}
+
+.cvc-input {
+  margin-top: 1.5rem;
+}
+
+.cvc-input label {
+  align-self: flex-start;
+  position: relative;
+  top: -20px;
+  left: 50px;
+}
+
+.cvc-input input {
+  width: 145px;
+}
+
+.cvc-input .error {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+input {
+  border-color: var(--Light-grayish-violet);
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  font-family: var(--font);
+  letter-spacing: 1px;
+}
+
+.thank-you-container::before {
+  content: '';
+  background-image: url('./images/icon-complete.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  width: auto; 
+  height:100px;
+  margin: 0 auto;
+  margin-bottom: 1rem; 
+  border-radius: 50%;
+}
+
+.thank-you-container h1{
+ font-size: 24px;
+ letter-spacing: 1px;
+ font-weight: 500;
+ text-transform: uppercase;
+ text-align: center;
+ padding: 1rem;
+ color: var(--Very-dark-violet);
+}
+
+.thank-you-container p{
+  font-size: 16px;
+  color: var(--Dark-grayish-violet);
+  padding-bottom: 1rem;
+}
+
+.btn:active{
+  scale: 0.98;
+}
